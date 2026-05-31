@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voodoo Vinyl Records | Record Store in Lancaster, CA</title>
+    <meta name="description" content="Voodoo Vinyl Records is Lancaster's vinyl record shop in the Antelope Valley. New & used LPs, rare finds, turntables, and accessories. Stop by today.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2250%22 font-size=%2285%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>💿</text></svg>">
+    <link href="https://fonts.cdnfonts.com/css/modern-no-20" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/voodooVinylLogo.png" alt="Voodoo Vinyl voodooVinyl Logo"/>
+        </div>
+        <div class="menu">
+            <button class="button" id="aboutButton">about</button>
+            <button class="button" id="contactButton">contact</button>
+        </div>
+    </header>
+
+        <div id="hero">
+        <div class="hero">
+            <h1>new/used vinyl records for sale</h1>
+            <br>
+            <h1>store hours are: <br> tuesday - wednesday (2p-6p)<br>thursday (4p-7p)<br>friday & saturday (12p-6p)<br>sunday (12p-5p)</h1>
+            <br>
+            <h1><a href="https://maps.app.goo.gl/ZRPJp31Y1J3FMyas7" target="_blank">721 west lancaster blvd.<br>lancaster, ca. 93534</a></h1>
+            <br>
+        </div>
+    </div>
+
+    <div id="aboutPage" style="display: none;">
+        <div class="aboutHero">
+        <div class="slider">
+            <img src="./images/image.png" alt="">
+            <img src="./images/image1.png" alt="">
+            <img src="./images/image2.png" alt="">
+            <img src="./images/image3.png" alt="">
+            <img src="./images/image4.png" alt="">
+        </div>
+        <div class="aboutText">
+            <h1 class="hideOnMobile">about voodoo vinyl</h1>
+            <br class="hideOnMobile">
+            <h1 class="hideOnMobile">thank you for visiting voodoo vinyl new & used records.</h1>
+            <br class="hideOnMobile">
+            <h1>we are a small family owned and operated record shop located @ <a href="https://maps.app.goo.gl/ZRPJp31Y1J3FMyas7" target="_blank">721 west lancaster blvd</a></h1>
+            <br>
+            <h1>we have thousands of used records and our new vinyl section grows weekly.</h1>
+            <br>
+            <h1>our motto: 'analog is life, digital is lifeless'</h1>
+        </div>
+    </div>
+    </div>
+
+    <div class="contactPage" style="display: none;">
+        <div class="contactHero">
+            <div class="contactText">
+                <h1>our lancaster location</h1>
+                <br>
+                <h1><a href="https://maps.app.goo.gl/ZRPJp31Y1J3FMyas7" target="_blank">721 west lancaster blvd.</a></h1>
+                <h1><a href="https://maps.app.goo.gl/ZRPJp31Y1J3FMyas7" target="_blank">lancaster, ca. 93534</a></h1>
+                <br>
+                <h1>+1.661.945.6511</h1>
+                <br>
+                <h1>greg@voodoovinylrecords.com</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="musicPlayer">
+            <audio id="audio" src="http://nebula.wsimg.com/68c54a1a963b374014b8b13b1ea632ed?AccessKeyId=3B1A613B350B9C887349&disposition=0&alloworigin=1&type=audio"></audio>
+            <div class="mediaButtons">
+                <button id="backwardButton"><img src="/images/backward.svg" alt="" /></button>
+                <button id="playButton"><img id="playButtonImage" src="/images/playIcon.svg" alt="" /></button>
+                <button id="forwardButton"><img src="/images/forward.svg" alt="" /></button>
+            </div>
+            <div id="currentlyPlayingText">
+                <p id="title">Platform Shoes</p>
+                <p id="artist">by Richard Simmons' Jazzercise Extravaganza</p>
+                <!-- <p id="time">0:00/3:33</p> -->
+            </div>
+        </div>
+        <div id="footerText">
+            <h2>analog is life, digital is lifeless</h2>
+        </div>
+    </div>
+    
+
+    <canvas class="webgl"></canvas>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./pageLoader.js"></script>
+    <script type="module" src="./mouseDragAnimation.js"></script>
+    <script type="module" src="./musicPlayer/musicPlayer.js"></script>
+</body>
+</html>

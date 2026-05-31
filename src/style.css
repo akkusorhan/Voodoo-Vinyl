@@ -1,0 +1,443 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    cursor: grab;
+}
+
+*:active {
+    cursor: grabbing;
+}
+
+html,
+body
+{
+    font-family: "Modern No. 20", sans-serif;
+    font-weight: 100;
+    overflow: hidden;
+    display: grid;
+    z-index: 0;
+    
+}
+
+/* Header navigation and buttons */
+
+header {
+    /* border: 2px yellow solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5%;
+    margin-bottom: 0%;
+    height: fit-content;
+    cursor: auto;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo {
+    /* border: 2px solid red; */
+    height: 100px;
+    width: 100px;
+}
+
+.logo img {
+    pointer-events: auto;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+}
+
+.menu {
+    /* border: 2px orange solid; */
+    cursor: auto;
+}
+
+.button {
+    font-family: "Modern No. 20", sans-serif;
+    font-size: 18px;
+    padding: 5px 16px;
+    margin: 0px 5px;
+    border-radius: 16px;
+    background-color: white;
+    border: none;
+    transition: 0.2s ease-in-out;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+button:hover {
+    background-color: rgb(222, 222, 222);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+
+}
+
+@media (max-width: 1000px) {
+    header {
+        height: 100px;
+        margin: 2% 5%;
+        margin-bottom: 0%;
+        align-items: center;
+    }
+    .logo {
+        height: fit-content;
+        width: fit-content;
+    }
+    .logo img {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+
+/* Hero section, main content */
+
+#hero {
+    z-index: 2;
+    display: flex;
+    justify-content: end;
+    pointer-events: none;
+}
+
+.hero {
+    /* border: 2px blue solid; */
+    color: white;
+    z-index: 2;
+    height: 300px;
+    margin: 1.5%;
+    pointer-events: none;
+    width: fit-content;
+}
+
+.hero h1 {
+    font-size: 25px;
+    text-align: end;
+    pointer-events: auto;
+    cursor: auto;
+}
+
+.hero a {
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    .hero {
+        margin: 2% 5%;
+    }
+
+    .hero h1 {
+        font-size: 16px;
+    }
+}
+
+/* Footer, music player */
+
+#footer {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+    color: white;
+    /* border: 2px solid orange;  */
+    width: 97%;
+    margin: 1.5%;
+    pointer-events: none;
+}
+
+#musicPlayer {
+    display: flex;
+    align-items: center;
+    /* border: 2px solid turquoise; */
+    pointer-events: auto;
+    cursor: auto;
+    z-index: 3;
+}
+
+#musicPlayer:hover {
+    cursor: auto;
+}
+
+.mediaButtons button {
+    background-color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 16px;
+    margin: 5px;
+    pointer-events: auto;
+    transition: 0.2s ease-in-out;
+    height: fit-content;
+}
+
+#playButton {
+    padding: 0%;
+    height: 45px;
+    width: 55px;
+}
+
+#playButton img {
+    height: 20px;
+    width: 20px;
+}
+
+.mediaButtons button img {
+    cursor: pointer;
+}
+
+.mediaButtons button:hover {
+    background-color: rgb(222, 222, 222);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#playButton {
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+#currentlyPlayingText {
+    margin: 0px 30px;
+    font-size: 12px;
+    /* border: 2px solid pink; */
+}
+
+#title {
+    font-size: 25px;
+}
+
+@media (max-width: 1000px) {
+    #footer{
+        margin-left: 5%;
+        margin-bottom: 5%;
+        width: max-content;
+
+    }
+    #musicPlayer {
+        /* border: dotted green; */
+        width: 100%;
+        justify-content: space-between;
+    }
+    .mediaButtons {
+        /* border: 2px solid purple; */
+        width: fit-content;
+    }
+    .mediaButtons button {
+        margin: 0px;
+    }
+
+    #currentlyPlayingText {
+        margin: 0px 0px 0px 15px;
+        width: 220px;
+        /* border: 2px solid blue; */
+        display: grid;
+        justify-content: flex-start;
+    }
+
+    #title {
+        font-size: 16px;
+    }
+
+    #footerText {
+        display: none;
+    }
+}
+
+/* ABOUT PAGE */
+#aboutPage {
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    /* border: 2px solid red; */
+}
+
+.aboutHero {
+    z-index: 2;
+    width: 33vw;
+    pointer-events: auto;
+    /* border: 2px solid blue; */
+    display: grid;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    overflow-x: auto;          /* the horizontal scroll */
+    scrollbar-width: none; /* Firefox */
+    /* border: 2px solid green; */
+}
+
+.slider::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.slider img {
+    height: 100%;            
+    width: 80%;
+    scroll-snap-align: start;  /* each image snaps to the left edge */
+    border-radius: 42px;
+    -webkit-user-drag: none;
+}
+
+.aboutText {
+    color: white;
+    font-size: 12px;
+    text-align: end;
+    margin-top: 35px;
+    margin-right: 4%;
+    /* border: 2px solid pink; */
+}
+
+.aboutText a {
+    color: white;
+}
+
+@media (max-width: 1500px) {
+    .aboutText {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #aboutPage {
+        /* border: 2px solid blue; */
+        margin: 0% 5%;
+        margin-top: 0%;
+
+    }
+    .aboutHero {
+        width: 90vw;
+        display: flex;
+        flex-direction: column-reverse;
+        /* border: 2px solid pink; */
+        margin-top: 0%;
+    }
+
+    .slider {
+        margin-top: 10px;
+    }
+
+    .slider img {
+        height: 150px;
+        border-radius: 25px;
+    }
+
+    .aboutText {
+        font-size: 8px;
+        margin-top: 0%;
+        padding-top: 0%;
+        /* border: 2px solid white; */
+        width: 100%;
+    }
+
+    .hideOnMobile {
+        display: none;
+    }
+}
+
+/* CONTACT PAGE */
+.contactPage {
+    z-index: 2;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    margin: 0% 1.5%;
+    pointer-events: none;
+}
+
+.contactHero {
+    /* border: 2px solid blue; */
+    pointer-events: auto;
+}
+
+.contactHero:hover {
+    cursor: auto;
+}
+
+.contactText {
+    color: white;
+    font-size: 12px;
+    text-align: end;
+}
+
+.contactText h1 {
+    cursor: auto;
+}
+
+.contactText a {
+    color: white;
+    cursor: auto;
+}
+
+/* contact Form */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin-top: 35px;
+}
+
+.contact-form:hover {
+    cursor: auto;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.field label {
+    color: white;
+    font-family: "Modern No. 20", sans-serif;
+    font-size: 16px;
+    cursor: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.5rem;
+    font: "Modern No. 20", sans-serif;          /* use your Modern No. 20 font, not the browser default */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: auto;
+}
+
+.contact-form button {
+    padding: 0.6rem 1.2rem;
+    width: fit-content;     /* button hugs its text instead of stretching */
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .contactPage {
+        margin: 0% 5%;
+        margin-top: 0%;
+        /* border: 2px solid red; */
+    }
+
+    .contactHero {
+        /* border: 2px solid blue; */
+        width: 100%;
+    }
+
+    .contactText {
+        font-size: 8px;
+    }
+
+    .contact-form {
+        display: none;
+    }
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 1;
+}
