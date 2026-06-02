@@ -1,5 +1,6 @@
-import { needleArm, needleArmPlay, needleArmPause, vinylBaseRotation, vinylRotation, vinylRotationStart, vinylRotationStop, vinylBaseRotationStart, vinylBaseRotationStop } from "../script"
+import { needleArm, needleArmPlay, needleArmPause, vinylBaseRotation, vinylRotation, vinylRotationStart, vinylRotationStop, vinylBaseRotationStart, vinylBaseRotationStop } from "./script.js"
 import { gsap } from "gsap"
+import tracks from "./tracks.json"
 
 const playButton = document.querySelector("#playButton")
 const backwardButton = document.querySelector("#backwardButton")
@@ -10,17 +11,17 @@ const audio = document.querySelector("#audio")
 let trackLength = 0
 let elapsed = 0
 
-let tracks = []
+// let tracks = []
 let trackNumber = 0
 
-fetch("/musicPlayer/tracks.json")
-.then(response => response.json())
-.then(data => {
-    tracks = data
-})
-.catch(error => {
-    console.error('Could not load JSON:', error);
-});
+// fetch("/musicPlayer/tracks.json")
+// .then(response => response.json())
+// .then(data => {
+//     tracks = data
+// })
+// .catch(error => {
+//     console.error('Could not load JSON:', error);
+// });
 
 let trackTitle = document.querySelector("#title")
 let trackArtist = document.querySelector("#artist")

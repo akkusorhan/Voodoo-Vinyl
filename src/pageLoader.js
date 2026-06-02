@@ -11,19 +11,19 @@ homePageButton.addEventListener("click", () => {
     aboutPage.style.display = "none"
     contactPage.style.display = "none"
 
-    window.history.pushState( { data: null }, "Voodoo Vinyl Records | Record Store in Lancaster, CA", "/home" )
+    window.history.pushState( { data: null }, "Voodoo Vinyl Records | Record Store in Lancaster, CA", "/index.html" )
 })
 aboutPageButton.addEventListener("click", () => {
     homePage.style.display = "none"
     aboutPage.style.display = ""
     contactPage.style.display = "none"
 
-    window.history.pushState( { data: null }, "About Us | Voodoo Vinyl Records — Lancaster, CA", "/about" )
+    window.history.pushState( { data: null }, "About Us | Voodoo Vinyl Records — Lancaster, CA", "/about.html" )
 })
 contactPageButton.addEventListener("click", () => {
     homePage.style.display = "none"
     aboutPage.style.display = "none"
     contactPage.style.display = ""
 
-    window.history.pushState( { data: null }, "Contact | Voodoo Vinyl Records — Lancaster, CA", "/contact" )
+    window.history.pushState( { data: null }, "Contact | Voodoo Vinyl Records — Lancaster, CA", "/contact.html" )
 })

@@ -333,6 +333,8 @@ const tick = () =>
     // recordPlayer ? recordPlayer.children[4].rotation.y -= delta * 3.49 : null
     // recordPlayer ? recordPlayer.children[7].rotation.y -= delta * 3.49 : null
 
+    // console.log(camera.position, camera.rotation)
+
     // Update controls
     controls.update()
 
