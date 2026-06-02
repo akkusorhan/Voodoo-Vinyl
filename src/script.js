@@ -231,27 +231,47 @@ const homePosition = camera.position.clone()
 const homeTarget = controls.target.clone()
 
 // debouncing start eventhandler
-function debounce(fn, ms) {
-    let timer;
-    return (...args) => {
-        clearTimeout(timer);
-        timer = setTimeout(() => fn(...args), ms);
-    };
+let timeoutId
+let clickDown = null
+
+function debounce(fn, delay) {
+    return function debounced (...args) {
+        clearTimeout(timeoutId)
+        console.log("initiated: waiting 2 seconds")
+        timeoutId = setTimeout(() => {
+            fn(...args)
+            console.log("debounced")
+        }, delay);
+    }
+    debounced.cancel = function () {
+        clearTimeout(timeoutId)
+    }
 }
 
-const handleStart = debounce(() => {
-        gsap.killTweensOf(camera.position)
-        gsap.killTweensOf(controls.target) 
-}, 2000);
+// const handleStart = debounce(() => {
+//         gsap.killTweensOf(camera.position)
+//         gsap.killTweensOf(controls.target) 
+// }, 1500);
 
 const handleEnd = debounce(() => {
-        gsap.killTweensOf(camera.position)
-        gsap.killTweensOf(controls.target) 
-        returnHome()
+        // gsap.killTweensOf(camera.position)
+        // gsap.killTweensOf(controls.target) 
+        clickDown ? null : returnHome()
+        controls.update()
 }, 2000);
 
-controls.addEventListener("start", handleStart)
-controls.addEventListener("end", handleEnd)
+// controls.addEventListener("start", handleStart)
+controls.addEventListener("start", () => {
+    clickDown = true
+    console.log(clickDown)
+})
+controls.addEventListener("end", () => {
+    clickDown = false
+    console.log(clickDown)
+    setTimeout(() => {
+        clickDown ? null : handleEnd()
+    }, 500);
+})
 
 function returnHome() {
     gsap.to(camera.position, {
@@ -272,6 +292,7 @@ function returnHome() {
         onUpdate: () => { controls.enabled = false },
         onComplete: () => { controls.enabled = true }
     })
+    
 }
 
 

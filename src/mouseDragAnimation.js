@@ -18,11 +18,11 @@ window.addEventListener('mousemove', e => {
   e.preventDefault();
   const walk = e.pageX - startX;        // how far the mouse moved
   slider.scrollLeft = startScroll - walk;  // scroll the opposite way
-  console.log("working")
+  // console.log("working")
 });
 
 window.addEventListener('mouseup', () => {
   isDown = false;
   slider.style.cursor = 'grab';
-  console.log("working")
+  // console.log("working")
 });
